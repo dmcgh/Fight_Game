@@ -12,8 +12,6 @@ export default class App extends React.Component {
           <li><Link to="/createWeapon">Create Weapon</Link></li>
           <li><Link to="/fight">Fight!</Link></li>
         </ul>
-
-
         {this.props.children}
       </div>
     );

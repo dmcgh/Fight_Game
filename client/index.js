@@ -9,13 +9,25 @@ import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
+
+
 render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
       <Route path="createCreature" component={Creature} />
       <Route path="createWeapon" component={Weapon} />
       <Route path="fight" component={Fight} />
     </Route>
   </Router>
   , document.getElementById('root'));
+
+
+  // <Router history={browserHistory}>
+  //   <Route path="/" component={App}>
+  //     <IndexRoute component={Home} />
+  //     <Route path="createCreature" component={Creature} />
+  //     <Route path="createWeapon" component={Weapon} />
+  //     <Route path="fight" component={Fight} />
+  //   </Route>
+  // </Router>
+  // , document.getElementById('root'));

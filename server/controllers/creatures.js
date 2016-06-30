@@ -6,8 +6,10 @@ import Creature from '../models/creature';
 const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
-  Creature.find((err, creatures) => res.send({ creatures })
-  // console.log('Creatures:', creatures);
+  Creature.find((err, creatures) => {res.send({ creatures })
+  console.log('Creatures:', creatures);
+
+}
 );
 });
 
@@ -22,9 +24,11 @@ router.get('/', (req, res) => {
 // });
 
 router.post('/createCreature', (req, res) => {
+  console.log('Creating a new creature: ', req.body);
   const p = new Creature(req.body);
-  p.save(() => {
-    res.send({ state: 'success' });
+  p.save((err) => {
+    console.log('err: ', err);
+    res.send({ p });
   });
 });
 

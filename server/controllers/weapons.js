@@ -6,7 +6,7 @@ import Weapon from '../models/weapon';
 const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
-  Weapon.find((err, creatures) => res.send({ weapons })
+  Weapon.find((err, weapons) => res.send({ weapons })
   //console.log('Creatures:', creatures);
 );
 });
@@ -24,6 +24,6 @@ router.get('/', (req, res) => {
 router.post('/createWeapon', (req, res) => {
   const p = new Weapon(req.body);
   p.save(() => {
-    res.send({state: 'success'});
+    res.send({ p });
   });
 });
