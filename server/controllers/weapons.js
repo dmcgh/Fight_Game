@@ -7,7 +7,7 @@ const router = module.exports = express.Router();
 
 router.get('/', (req, res) => {
   Weapon.find((err, weapons) => res.send({ weapons })
-  //console.log('Creatures:', creatures);
+  // console.log('Creatures:', creatures);
 );
 });
 
